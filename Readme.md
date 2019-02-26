@@ -36,8 +36,8 @@ bash install.sh
 Login to your vps as root, download and run the Update.sh file using this command:
 
 ```
-curl -O https://raw.githubusercontent.com/PostJoke/masternode/master/Update.sh > Update.sh
-bash Update.sh
+curl -O https://raw.githubusercontent.com/PostJoke/masternode/master/update.sh > update.sh
+bash update.sh
 ```
 
 > **Available options:**
