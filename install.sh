@@ -353,7 +353,7 @@ reboot'
 
 read_options(){
 	local choice
-	read -p "Enter choice [ 1 - 5] " choice
+	read -p "Enter choice [ 1 - 3] " choice
 	case $choice in
 	
 #### Commercium Node installation
