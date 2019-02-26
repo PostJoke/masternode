@@ -118,10 +118,10 @@ Update_Masternode_And_Script_Multi() {
 	echo "-----------------------------------------------------"
     echo  -e "${GREEN} Git checkout master               ${STD}"
     echo "-----------------------------------------------------"
-    latestrelease=$(curl --silent 'https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
-	link="https://github.com/CommerciumBlockchain/CommerciumContinuum/archive/$latestrelease.tar.gz"
-	wget $link
-	tar -xvzf $latestrelease.tar.gz
+   latestrelease=$(curl --silent 'https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+link="https://github.com/CommerciumBlockchain/CommerciumContinuum/archive/$latestrelease.tar.gz"
+wget $link
+tar -xvzf $latestrelease.tar.gz
     file=${latestrelease//[Vv]/CommerciumContinuum-}
     echo ""
     echo "-----------------------------------------------------"
