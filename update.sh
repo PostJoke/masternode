@@ -31,7 +31,7 @@ Update_Masternode_And_Script_Single() {
 	echo ""
 	cd ~
 	echo  -e "${GREEN} Get latest release                ${STD}"
-	latestrelease=$(curl --silent https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+	latestrelease=$(curl --silent 'https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 	link="https://github.com/CommerciumBlockchain/CommerciumContinuum/archive/$latestrelease.tar.gz"
 	wget $link
 	tar -xvzf $latestrelease.tar.gz
@@ -46,10 +46,6 @@ Update_Masternode_And_Script_Single() {
 	echo ""			
 	commercium-cli stop
 	sleep 10	
-	rm -f /usr/local/bin/commercium-cli
-	rm -f /usr/local/bin/commerciumd
-	rm -f /usr/local/bin/commerciumd-tx
-	rm -f /usr/local/bin/commercium-gtest
 	echo  -e "${GREEN} Make install                      ${STD}"
 	echo ""	
 	./zcutil/fetch-params.sh
@@ -122,7 +118,7 @@ Update_Masternode_And_Script_Multi() {
 	echo "-----------------------------------------------------"
     echo  -e "${GREEN} Git checkout master               ${STD}"
     echo "-----------------------------------------------------"
-    latestrelease=$(curl --silent https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
+    latestrelease=$(curl --silent 'https://api.github.com/repos/CommerciumBlockchain/CommerciumContinuum/releases/latest' | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/')
 	link="https://github.com/CommerciumBlockchain/CommerciumContinuum/archive/$latestrelease.tar.gz"
 	wget $link
 	tar -xvzf $latestrelease.tar.gz
@@ -143,10 +139,6 @@ Update_Masternode_And_Script_Multi() {
     echo "-----------------------------------------------------"
 	commercium-cli stop
 	sleep 10
-	rm -f /usr/local/bin/commercium-cli
-	rm -f /usr/local/bin/commerciumd
-	rm -f /usr/local/bin/commerciumd-tx
-	rm -f /usr/local/bin/commercium-gtest
     echo ""	
     echo "-----------------------------------------------------"
     echo  -e "${GREEN} Make install                      ${STD}"
