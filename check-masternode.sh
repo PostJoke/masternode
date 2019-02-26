@@ -75,7 +75,7 @@ echo '[$dt]    =============================================================='
 echo '[$dt]==> Info: Vps ip: $i                                              '
 echo '[$dt]    =============================================================='
 printf '[$dt]==> Info: Commercium Core Last Block: $blook'; commercium-cli getblockcount || { echo 'Commercium core not running';  }
-printf '[$dt]==> Info: Commercium Core RPC client version: '; Commercium -version | awk -F'"' '"' '"'{print $NF}'"' | cut -d '-' -f1
+printf '[$dt]==> Info: Commercium Core RPC client version: '; commercium-cli -version | awk -F'"' '"' '"'{print $NF}'"' | cut -d '-' -f1
 echo '[$dt]    =============================================================='
 echo '' 
 sleep 2
