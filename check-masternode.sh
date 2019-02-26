@@ -62,7 +62,7 @@ echo  -e "${GREEN} Connexion Vps ip $i ${STD}\n"
 echo  -e "${RED} Commercium Core Vps ip $i Data          ${STD}"
 sshpass -p $rootpass ssh -p$port -o StrictHostKeyChecking=no root@$i "
 printf '${YELLOW}Commercium Core Last Block: ${NC}'
-commerciumd-cli getblockcount  || { echo 'Commercium core not running'; }
+commercium-cli getblockcount  || { echo 'Commercium core not running'; }
 printf '${YELLOW}Commercium Core RPC client version: ${NC}' 
 commercium-cli -version | awk -F'"' '"' '"'{print $NF}'"' | cut -d '-' -f1
 printf '${RED} ------------------------------------------------ ${STD}\n' 
