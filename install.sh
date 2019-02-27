@@ -194,14 +194,8 @@ file=${latestrelease//[v]/CommerciumContinuum-}
 yes | sudo apt-get update
 export LC_ALL=en_US.UTF-8
 yes | sudo apt-get install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget libcurl4-gnutls-dev bsdmainutils automake curl
-yes | sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
-yes | sudo apt-get install software-properties-common
-yes | sudo add-apt-repository ppa:bitcoin/bitcoin
-yes | sudo apt-get update
-yes | sudo apt-get install libdb4.8-dev libdb4.8++-dev
-yes | sudo apt-get install libminiupnpc-dev
-yes | sudo apt-get install libzmq3-dev
 yes | sudo apt-get install libgomp1
+yes | sudo apt-get update
 sleep 2
 echo ""
 echo  -e "${GREEN} Compile Commercium core .....                 ${STD}"
